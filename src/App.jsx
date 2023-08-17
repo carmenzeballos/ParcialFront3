@@ -14,7 +14,7 @@ function handleSubmit (datos) {
 
   return (
     <div>
-      <h2>Formulario</h2>
+      <h2>Bienvenido/a, escribe tu nombre y animal favorito (que obviamente es el gato)</h2>
       <Form onSubmit={handleSubmit} />
       {datos && (
         <div className="submitted-data">

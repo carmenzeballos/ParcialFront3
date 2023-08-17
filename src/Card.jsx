@@ -1,5 +1,3 @@
-//Este componente deberia recibir por props y mostrar en pantalla la informacion
-//que envia el usuario
 
 
 
@@ -10,8 +8,9 @@ function Card(user) {
       <ul>
 
           <li className='card' key={user.id}>
-            <p>Nombre: {user.data.nombre}</p>
-            <p>Helado favorito: {user.data.helado}</p>
+            <p>Nombre: {user.data.nombre}</p> 
+            <br /><br />
+            <p>Animal favorito: {user.data.animal}</p>
           </li>
 
       </ul>

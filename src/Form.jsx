@@ -4,7 +4,7 @@ import { useState } from "react";
 const Form = (props) => {
   //Aqui deberias agregar los estados y los handlers para los inputs
   const [nombre, setNombre] = useState('')
-  const [helado, setHelado] = useState('')
+  const [animal, setAnimal] = useState('')
   const [mensajeError, setMensajeError] = useState('')
 
   const handleSubmit = (event) => {
@@ -12,18 +12,19 @@ const Form = (props) => {
     nombre.trimStart();
     if (nombre.length < 3) {
       setMensajeError('Por favor chequea que la informacion sea correcta')
-    } else if (helado.length < 6) {
-      setMensajeError('Debe tener mas de 6 caracteres el helado')
+    } else if (animal.length < 6) {
+      setMensajeError('Por favor chequea que la informacion sea correcta')
     } else {
-      props.onSubmit({ nombre, helado })
+      props.onSubmit({ nombre, animal })
       setNombre('')
-      setHelado('')
+      setAnimal('')
       setMensajeError('')
     }
   }
           return (
-            <div>
-              <h1>Elige tu helado favorito</h1>
+            <div class="estilo1">
+              <h1>Elige tu animal favorito</h1>
+              <br /><br />
               <form onSubmit={handleSubmit}>
                 <label>
                   Nombre:
@@ -33,17 +34,17 @@ const Form = (props) => {
                     onChange={(event) => setNombre(event.target.value)}
                   />
                 </label>
-                <br />
+                <br /><br /><br /><br />
                 <label>
-                  Helado favorito:
+                  Animal favorito:
                   <input
                     type='text'
-                    value={helado}
-                    onChange={(event) => setHelado(event.target.value)}
+                    value={animal}
+                    onChange={(event) => setAnimal(event.target.value)}
                   />
                 </label>
-                <br />
-                <button type='submit'>Submit</button>
+                <br /><br /><br /><br />
+                <button  type='submit' class="custom-button">Submit</button>
               </form>
               {mensajeError && <p>{mensajeError}</p>}
             </div>
